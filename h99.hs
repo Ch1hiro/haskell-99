@@ -6,7 +6,7 @@ myLast [] = error "no end for empty lists!"
 myLast (x:[]) = x
 myLast (_:xs) = myLast xs
 
----かきこfkdじゃsk
+-- あいうえお
 
 myButLast :: [a] -> a
 myButLast [] = error "no end for empty lists!"
