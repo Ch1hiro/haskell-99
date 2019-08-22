@@ -18,3 +18,14 @@ elementAt :: [a] -> Int -> a
 elementAt [] n = error "This is empty list!"
 elementAt (x:xs) 1 = x
 elementAt (x:xs) n = elementAt xs (n-1)
+
+myLength :: [a] -> Int
+myLength [] = 0
+myLength xs = sumarray (map elementToOne xs)
+
+sumarray :: [Int] -> Int
+sumarray [] = 0
+sumarray (x:xs) = x + sumarray xs
+
+elementToOne :: a -> Int
+elementToOne a = 1
