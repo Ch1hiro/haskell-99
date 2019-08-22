@@ -35,3 +35,14 @@ sumarray (x:xs) = x + sumarray xs
 elementToOne :: a -> Int
 elementToOne a = 1
 ---------------------------------------------------
+
+--question05
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
+---------------------------------------------------
+{-
+--question06
+isPalindrome :: [a] -> Bool
+isPalindrome xs = (==) xs (myReverse xs)
+-}
