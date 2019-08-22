@@ -1,3 +1,4 @@
+ --question01
 myLast :: [a] -> a
 -- erroに対する例外処理がない, のでそれを追加
 myLast [] = error "no end for empty lists!"
@@ -5,21 +6,24 @@ myLast [] = error "no end for empty lists!"
 -- myLast [x] = x
 myLast (x:[]) = x
 myLast (_:xs) = myLast xs
-
+---------------------------------------------------
 -- あいうえお
-
+--question02
 myButLast :: [a] -> a
 myButLast [] = error "no end for empty lists!"
 myButLast [x] = error "ちょっとこれは無理"
 myButLast (x:y:[]) = x
 myButLast (_:xs) = myButLast xs
+---------------------------------------------------
 
+--question03
 elementAt :: [a] -> Int -> a
 elementAt [] n = error "This is empty list!"
 elementAt (x:xs) 1 = x
 elementAt (x:xs) n = elementAt xs (n-1)
-<<<<<<< HEAD
+---------------------------------------------------
 
+--question04
 myLength :: [a] -> Int
 myLength [] = 0
 myLength xs = sumarray (map elementToOne xs)
@@ -30,5 +34,4 @@ sumarray (x:xs) = x + sumarray xs
 
 elementToOne :: a -> Int
 elementToOne a = 1
-=======
->>>>>>> 5c0ec42417fbcc0d5bbb45e3203c39009366c227
+---------------------------------------------------
