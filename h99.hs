@@ -13,3 +13,8 @@ myButLast [] = error "no end for empty lists!"
 myButLast [x] = error "ちょっとこれは無理"
 myButLast (x:y:[]) = x
 myButLast (_:xs) = myButLast xs
+
+elementAt :: [a] -> Int -> a
+elementAt [] n = error "This is empty list!"
+elementAt (x:xs) 1 = x
+elementAt (x:xs) n = elementAt xs (n-1)
