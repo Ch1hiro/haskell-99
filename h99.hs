@@ -18,6 +18,7 @@ elementAt :: [a] -> Int -> a
 elementAt [] n = error "This is empty list!"
 elementAt (x:xs) 1 = x
 elementAt (x:xs) n = elementAt xs (n-1)
+<<<<<<< HEAD
 
 myLength :: [a] -> Int
 myLength [] = 0
@@ -29,3 +30,5 @@ sumarray (x:xs) = x + sumarray xs
 
 elementToOne :: a -> Int
 elementToOne a = 1
+=======
+>>>>>>> 5c0ec42417fbcc0d5bbb45e3203c39009366c227
