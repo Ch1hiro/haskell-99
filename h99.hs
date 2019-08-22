@@ -26,11 +26,11 @@ elementAt (x:xs) n = elementAt xs (n-1)
 --question04
 myLength :: [a] -> Int
 myLength [] = 0
-myLength xs = sumarray (map elementToOne xs)
+myLength xs = sumArray (map elementToOne xs)
 
-sumarray :: [Int] -> Int
-sumarray [] = 0
-sumarray (x:xs) = x + sumarray xs
+sumArray :: [Int] -> Int
+sumArray [] = 0
+sumArray (x:xs) = x + sumArray xs
 
 elementToOne :: a -> Int
 elementToOne a = 1
