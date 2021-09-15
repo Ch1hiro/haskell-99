@@ -8,5 +8,5 @@ myLast (x:xs) = myLast xs
 myButLast :: [a] -> a
 myButLast []     = error "myButLast needs more than 1 elements!!"
 myButLast [x]    = error "myButLast needs more than 1 elements!!"
-myButLast [x:_]  = x
-myButLast [_:xs] = myButLast xs
+myButLast (x:y:[])  = x
+myButLast (_:xs) = myButLast xs
