@@ -34,3 +34,5 @@ myReverse (x:xs) = (myReverse xs) ++ [x]
 --q6
 isPalindrome :: Eq a => [a] -> Bool
 isPalindrome　x = x == (myReverse x)
+
+--q7
