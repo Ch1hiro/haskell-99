@@ -36,3 +36,4 @@ isPalindrome :: Eq a => [a] -> Bool
 isPalindrome　x = x == (myReverse x)
 
 --q7
+data NestedList a = Elem a | List [NestedList a]
