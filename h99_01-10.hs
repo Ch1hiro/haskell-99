@@ -22,3 +22,6 @@ elementAt (_:xs) k =
             elementAt xs (k-1)
 
 --question04, Sep 15th 2021
+myLength :: [a] -> Int
+myLength [] = 0
+myLength _:xs = 1 + myLength xs
