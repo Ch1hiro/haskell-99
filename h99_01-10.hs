@@ -37,3 +37,13 @@ isPalindrome　x = x == (myReverse x)
 
 --q7
 data NestedList a = Elem a | List [NestedList a]
+--q7はちょっと後にする。
+--不安だけど。データ構造体ってのを理解してからもう一度やってみよう。
+
+
+--q8
+compress :: [a] -> [a]
+compress [] = []
+compress (x:xs)
+      | x == head xs    = compress xs
+      | x /= head xs    = x : (compress xs)
