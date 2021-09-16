@@ -42,8 +42,8 @@ data NestedList a = Elem a | List [NestedList a]
 
 
 --q8
-compress :: [a] -> [a]
-compress [] = []
+compress :: Eq a =>[a] -> [a]
+compress [x] = [x]
 compress (x:xs)
       | x == head xs    = compress xs
       | x /= head xs    = x : (compress xs)
