@@ -71,3 +71,13 @@ split [] =[[]]
 split (x:xs)
       | (dropWhile (==x) (x:xs)) == []    = (takeWhile (== x) (x:xs)) :[]
       | otherwise                         = (takeWhile (== x) (x:xs)) : split ((dropWhile (== x) (x:xs)))
+
+
+-- I can write the function pack like this;
+pack :: Eq a => [a] -> [[a]]
+pack [] = []
+pack (x:xs) = (takeWhile (== x) (x:xs)) : split ((dropWhile (== x) (x:xs)))
+
+--q10
+encode :: Eq a => [a] -> [(Int, a)]
+encode x = zip (map length (pack x)) (map head (pack x))
