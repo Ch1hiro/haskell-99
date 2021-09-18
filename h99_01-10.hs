@@ -50,6 +50,7 @@ compress (x:xs)
       | x /= head xs    = x : (compress xs)
 
 --q9
+{-
 pack :: [a] -> [[a]]
 pack []  = [[]]
 pack [x] = [[x]]
@@ -63,8 +64,10 @@ listElemIsEq [x] = []
 listElemIsEq (x:xs)
       | x == head xs    = True : (listElemIsEq xs)
       | x /= head xs    = False : (listElemIsEq xs)
+-}
 
 split :: Eq a => [a] -> [[a]]
-split [] = [[]]
-split [x] = [[x]]
-split (x:xs) = (takeWhile (== x) (x:xs)) : split ((dropWhile (== x) (x:xs)))
+split [] =[[]]
+split (x:xs)
+      | (dropWhile (==x) (x:xs)) == []    = (takeWhile (== x) (x:xs)) :[]
+      | otherwise                         = (takeWhile (== x) (x:xs)) : split ((dropWhile (== x) (x:xs)))
