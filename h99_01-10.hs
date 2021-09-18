@@ -54,4 +54,17 @@ pack :: [a] -> [[a]]
 pack []  = [[]]
 pack [x] = [[x]]
 pack (x:xs)
-      |
+      | x == head xs
+      | x /= head xs
+
+listElemIsEq :: Eq a => [a] -> [Bool]
+listElemIsEq [] = []
+listElemIsEq [x] = []
+listElemIsEq (x:xs)
+      | x == head xs    = True : (listElemIsEq xs)
+      | x /= head xs    = False : (listElemIsEq xs)
+
+split :: Eq a => [a] -> [[a]]
+split [] = [[]]
+split [x] = [[x]]
+split (x:xs) = (takeWhile (== x) (x:xs)) : split ((dropWhile (== x) (x:xs)))
